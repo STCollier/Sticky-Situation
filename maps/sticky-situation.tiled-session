@@ -1,0 +1,33 @@
+{
+    "Map/SizeTest": {
+        "height": 4300,
+        "width": 2
+    },
+    "activeFile": "map.tmx",
+    "expandedProjectPaths": [
+    ],
+    "fileStates": {
+        "map.tmx": {
+            "scale": 2,
+            "selectedLayer": 2,
+            "viewCenter": {
+                "x": 238.5,
+                "y": 218.5
+            }
+        }
+    },
+    "last.exportedFilePath": "/home/sam/Multiplayer Client/maps",
+    "map.height": 25,
+    "map.lastUsedExportFilter": "All Files (*)",
+    "map.lastUsedFormat": "tmx",
+    "map.tileHeight": 10,
+    "map.tileWidth": 10,
+    "map.width": 150,
+    "openFiles": [
+        "map.tmx"
+    ],
+    "project": "sticky-situation.tiled-project",
+    "recentFiles": [
+        "map.tmx"
+    ]
+}
