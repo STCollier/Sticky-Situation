@@ -52,15 +52,14 @@ function menu:load()
 		end)
     end)
 
-    client:on("joinGame", function(data)
-    	menu.gameIsReady = true
-    	print(data.username.." joined")
-    end)
-
     client:on("invalidUsername", function(data)
     	menu.input.username = ""
     	menu.errMessage = "Client already exists"
     	menu.button.clickable = true
+    end)
+
+    client:on("ready", function()
+    	menu.gameIsReady = true
     end)
 end
 
