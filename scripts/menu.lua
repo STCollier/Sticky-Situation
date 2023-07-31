@@ -149,7 +149,7 @@ function menu:update(client)
     end 
 
     if (menu.gameIsReady) then
-    	player:init(menu.input.username, gamestate.world) -- DONT UPDATE MULTIPLE TIMES
+    	player:init(menu.input.username, world) -- DONT UPDATE MULTIPLE TIMES
     	gamestate.scene = "game"
     end
 end

@@ -1,6 +1,5 @@
 local gamestate = {
-	scene = "menu",
-	world = nil,
+	scene = "game",
 	numPlayers = 0,
 }
 

@@ -5,20 +5,9 @@ local gamestate = require "scripts/gamestate"
 local player = require "scripts/player"
 local map = require "scripts/map"
 local cam = require "lib/camera"
+local projectile = require "scripts/projectile"
 
 local allPlayers = {}
-
-function table.removekey(table, key)
-   local element = table[key]
-   table[key] = nil
-   return element
-end
-
-function tablelength(T)
-    local count = 0
-    for _ in pairs(T) do count = count + 1 end
-    return count
-end
 
 function drawPlayer(name, x, y)
     love.graphics.setColor(0, 0, 0, 1)
@@ -37,13 +26,17 @@ function love.load()
     client = sock.newClient("localhost", 8080)
 
     love.physics.setMeter(64)
-    gamestate.world = love.physics.newWorld(0, 9.81*64, true)
-    gamestate.world:setCallbacks(beginContact)
+    world = love.physics.newWorld(0, 9.81*64, true)
+    world:setCallbacks(beginContact)
 
     love.graphics.setDefaultFilter("nearest", "nearest")
 
     menu:load()
     map:load()
+
+    player:init("Player", world)
+
+    projectile:spawn("bomb", map.spawn.x, map.spawn.y-500)
 
     client:on("disconnect", function(data)
         client:on("leaveGame", function(data)
@@ -68,12 +61,15 @@ function love.update(dt)
     
     if (gamestate.scene == "menu") then menu:update(client) end
     if (gamestate.scene == "game") then
-        gamestate.world:update(dt)
+        world:update(dt)
         player:update(client, dt)
+        map:update()
 
-        for key, v in pairs(allPlayers) do
+        if not projectile.destroyed then projectile:update(dt) end
+
+        --[[for key, v in pairs(allPlayers) do
             print(allPlayers[key].username, allPlayers[key].x, allPlayers[key].y)
-        end
+        end]]--
     end
 end
 
@@ -81,13 +77,16 @@ function love.draw()
     if (gamestate.scene == "menu") then menu:draw() end
     if (gamestate.scene == "game") then
         camera:attach()
-        for key, v in pairs(allPlayers) do
+        --[[for key, v in pairs(allPlayers) do
             if (allPlayers[key].username ~= menu.input.username) then
                 drawPlayer(allPlayers[key].username, allPlayers[key].x, allPlayers[key].y)
             else
                 player:draw()
             end
-        end
+        end]]--
+        player:draw()
+
+        if not projectile.destroyed then projectile:draw() end
 
         love.graphics.setColor(1, 1, 1, 1)
         map:draw()
@@ -96,6 +95,6 @@ function love.draw()
 end 
 
 
-function beginContact(a, b)
-    player:resetJump(a, b)
+function beginContact(a, b) 
+    player:handleCollisions(a, b) 
 end

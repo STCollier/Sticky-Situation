@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.9" tiledversion="1.9.1" orientation="orthogonal" renderorder="right-down" width="142" height="25" tilewidth="10" tileheight="10" infinite="0" nextlayerid="6" nextobjectid="52">
+<map version="1.9" tiledversion="1.9.1" orientation="orthogonal" renderorder="right-down" width="142" height="25" tilewidth="10" tileheight="10" infinite="0" nextlayerid="6" nextobjectid="60">
  <imagelayer id="2" name="Map">
   <image source="map.png" width="1419" height="250"/>
  </imagelayer>
@@ -13,25 +13,13 @@
   <object id="9" x="448" y="113" width="38" height="137"/>
   <object id="10" x="486" y="123" width="35" height="127"/>
   <object id="11" x="553" y="146" width="16" height="16"/>
-  <object id="13" x="601" y="144" width="1" height="1"/>
-  <object id="14" x="602" y="143" width="1" height="2"/>
-  <object id="15" x="603" y="142" width="1" height="3"/>
-  <object id="16" x="604" y="141" width="1" height="4"/>
-  <object id="17" x="605" y="141" width="190" height="4"/>
-  <object id="18" x="601" y="145" width="4" height="105"/>
-  <object id="19" x="793" y="127" width="1" height="1"/>
-  <object id="20" x="794" y="126" width="1" height="2"/>
+  <object id="17" x="604" y="141" width="191" height="4"/>
+  <object id="18" x="601" y="144" width="3" height="106"/>
   <object id="22" x="793" y="128" width="2" height="13"/>
   <object id="23" x="795" y="125" width="60" height="3"/>
-  <object id="24" x="855" y="126" width="1" height="2"/>
-  <object id="25" x="856" y="127" width="1" height="1"/>
   <object id="26" x="855" y="128" width="2" height="15"/>
-  <object id="28" x="857" y="141" width="220" height="2"/>
-  <object id="31" x="1080" y="144" width="1" height="1"/>
-  <object id="33" x="1079" y="143" width="1" height="2"/>
-  <object id="34" x="1078" y="142" width="1" height="3"/>
-  <object id="36" x="1077" y="141" width="1" height="4"/>
-  <object id="37" x="1079" y="145" width="2" height="105"/>
+  <object id="28" x="857" y="141" width="221" height="2"/>
+  <object id="37" x="1079" y="144" width="2" height="106"/>
   <object id="38" x="1113" y="146" width="16" height="16"/>
   <object id="39" x="1161" y="148" width="89" height="103"/>
   <object id="40" x="1250" y="135" width="62" height="115"/>
@@ -40,6 +28,12 @@
   <object id="43" x="301" y="83" width="16" height="14"/>
   <object id="44" x="323" y="84" width="16" height="13"/>
   <object id="45" x="344" y="89" width="16" height="8"/>
+  <object id="52" x="793" y="126" width="2" height="2"/>
+  <object id="53" x="855" y="126" width="2" height="2"/>
+  <object id="54" x="1078" y="142" width="2" height="2"/>
+  <object id="55" x="602" y="142" width="2" height="2"/>
+  <object id="58" x="-3" y="0" width="3" height="250"/>
+  <object id="59" x="1420" y="0" width="3" height="250"/>
  </objectgroup>
  <objectgroup id="5" name="Spawn">
   <object id="51" x="825" y="110">
